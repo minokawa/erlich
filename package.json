@@ -20,6 +20,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
-    "@eslint/eslintrc": "^3"
+    "@eslint/eslintrc": "^3",
+    "sass": "^1.63.6",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0"
   }
 }

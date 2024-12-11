@@ -1,0 +1,40 @@
+
+.page {
+  --button-primary-hover: #ccc;
+  --button-secondary-hover: #1a1a1a;
+  padding-bottom: 40px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --button-primary-hover: #383838;
+    --button-secondary-hover: #f2f2f2;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: auto;
+}
+button.primary, a.button{
+  background-color: #ffffff;
+  color: #000;
+}
+button.secondary, a.button{
+  padding: 10px 20px 10px 20px;
+  gap: 15px;
+  font-weight: 600;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert(1);
+  }
+}

@@ -1,95 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import '@/styles/globals.css'
+import '@/styles/page.scss'
+import { Footer } from "@/components/footer";
+import { Navigation } from '@/components/navigation';
+import { CTA } from '@/components/cta';
+import { Hero } from '@/components/hero';
+import { Inspo } from '@/components/inspo';
+import { Recent } from '@/components/recent';
+import { Signup } from '@/components/signup';
+import { Trending } from '@/components/trending';
+import { Deals } from '@/components/deals';
+import { Items } from '@/components/items';
+import  CartProvider from '@/components/cart-provider';
+const Categories = [
+  {label: "Winter Fashion", img:"trend1.png"},
+  {label: "Boots", img:"trend2.png"},
+  {label: "Night Out", img:"trend3.jpg"},
+  {label: "Holidays", img:"trend9.png"},
+  {label: "Outerwear", img:"trend5.jpg"},
+  {label: "White Dresses", img:"trend6.jpg"},
+  {label: "Sweaters", img:"trend7.jpg"},
+  {label: "Party", img:"trend8.jpg"}
+]
+
+
+
+const Recommended = [
+  {label: "Winter Fashion", img:"nexxt1.jpg"},
+  {label: "Boots", img:"next2.jpg"},
+  {label: "Night Out", img:"next3.jpg"},
+  {label: "Holidays", img:"next4.jpg"},
+  {label: "Outerwear", img:"next5.jpg"}
+]
+
+const HashTags = ["#Thanksgiving","#NewYears","#Knitted","#WFH","#FallHashion"]
+
+const CTAData = [{variant:1, title:'Black Friday Exclusive', subtitle: 'Free shipping on all orders for vip 2 and up', bg:'bg.png', action:'#'},{variant:2,  title:'New Arrivals', subtitle: 'Get ready for the holidays with us!', action:'#', bg:'bg-1.png'}]
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+    <div className="page">
+      <main className="main">
+        <CartProvider>
+          <Navigation/>
+          <Hero/>
+          <Deals/>
+          <CTA CTAData={CTAData} row={0}/>
+          <Trending categories={Categories} hashtags={HashTags}/>
+          <CTA CTAData={CTAData} row={1}/>
+          <Recent  purchases={Items} />
+          <Inspo recommended={Recommended}/>
+          <Signup content={"sign up for exclusive deals and updates"}/>
+          <Footer/>
+      </CartProvider>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }

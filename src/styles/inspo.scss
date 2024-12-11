@@ -1,0 +1,48 @@
+
+.inspo{
+  text-align: center;
+  margin: auto;
+  margin-bottom: 40px;
+  h2{
+    display: block;
+    margin-bottom: 10px;
+
+    font-size: 36px;
+  }
+  .h2-sub{
+    display: block;
+    margin-bottom: 50px;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  
+    a.card{
+      width: 18%;
+      margin-bottom: 20px;
+      div.image-wrap{
+      
+        height: 280px;
+        overflow: hidden;
+        img{
+          width: 100%
+        }
+        margin-bottom: 10px;
+      }
+    
+      span{
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29.26px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+  
+      }
+    }
+  }
+}

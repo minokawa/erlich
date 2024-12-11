@@ -1,0 +1,65 @@
+
+.trending{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  h2{
+    display: block;
+    margin-bottom: 10px;
+
+    font-size: 36px;
+  }
+  .h2-sub{
+    display: block;
+    margin-bottom: 50px;
+  }
+  .hashtags{
+    margin-top: 20px;
+    display: flex;
+    justify-content:space-evenly;
+
+    a {
+    border: solid 1px #000;
+    border-radius: 25px;;
+    padding: 5px 10px;
+    font-weight: 600;
+    line-height: 17.07px;
+    text-align: center;
+
+
+    }
+  }
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+
+  a.card{
+    width: 23%;
+    margin-bottom: 20px;
+    div.image-wrap{
+    
+      height: 350px;
+      overflow: hidden;
+      img{
+        width: 100%
+      }
+      margin-bottom: 10px;
+    }
+  
+    span{
+      font-family: Montserrat;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29.26px;
+      text-align: center;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+
+    }
+  }
+}
